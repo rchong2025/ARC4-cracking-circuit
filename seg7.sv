@@ -1,0 +1,31 @@
+module seg7(input logic [3:0] in, input logic [1:0] flag, output logic [6:0] seg7);
+
+    always_comb begin
+        case (flag)
+            2'd0: seg7 = 7'b1111111; 
+            2'd1: seg7 = 7'b0111111;
+            default: begin
+                case (in)
+                    4'h0: seg7 = 7'b1000000;
+                    4'h1: seg7 = 7'b1111001;
+                    4'h2: seg7 = 7'b0100100;
+                    4'h3: seg7 = 7'b0110000;
+                    4'h4: seg7 = 7'b0011001;
+                    4'h5: seg7 = 7'b0010010;
+                    4'h6: seg7 = 7'b0000010;
+                    4'h7: seg7 = 7'b1111000;
+                    4'h8: seg7 = 7'b0000000;
+                    4'h9: seg7 = 7'b0010000;
+                    4'hA: seg7 = 7'b0001000;
+                    4'hB: seg7 = 7'b0000011;
+                    4'hC: seg7 = 7'b1000110;
+                    4'hD: seg7 = 7'b0100001;
+                    4'hE: seg7 = 7'b0000110;
+                    4'hF: seg7 = 7'b0001110;
+                    default: seg7 = 7'b1111111;
+                endcase
+            end
+        endcase
+    end
+
+endmodule: seg7
